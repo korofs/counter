@@ -95,16 +95,6 @@ public class MainActivity extends Activity {
         AudioManager mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mAudioManager.registerMediaButtonEventReceiver(mediaButtonReceiver);
 
-        //volume
-        /*ComponentName volumeButtonReceiver = new ComponentName(getPackageName(), VolumeIntentReceiver.class.getName());
-
-        IntentFilter volumeFilter = new IntentFilter("android.media.VOLUME_CHANGED_ACTION");
-        MediaButtonIntentReceiver volumeReceiver = new MediaButtonIntentReceiver();
-        volumeFilter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
-        registerReceiver(volumeReceiver, volumeFilter);
-
-        mAudioManager.registerMediaButtonEventReceiver(volumeButtonReceiver);*/
-
         /*Button button = (Button)findViewById(R.id.ClearData);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
