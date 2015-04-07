@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ButtonCounter</string>
+    <string name="reply_counter_text">Ответы на звонок: </string>
+    <string name="reply_counter_value">3</string>
+    <string name="plus_counter_text">Нажатия на плюс: </string>
+    <string name="plus_counter_value">3</string>
+    <string name="minus_counter_text">Нажатия на минус: </string>
+    <string name="minus_counter_value">3</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
