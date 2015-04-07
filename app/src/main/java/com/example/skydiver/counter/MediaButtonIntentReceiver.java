@@ -1,6 +1,7 @@
 package com.example.skydiver.counter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -24,9 +25,7 @@ public class MediaButtonIntentReceiver extends BroadcastReceiver {
         if (event == null) {
             return;
         }
-        Toast.makeText(CounterProvider.getInstance().getActivity().getApplicationContext(),
-                "Event key code = " + event.getKeyCode(),
-                Toast.LENGTH_LONG).show();
+
         int action = event.getAction();
         if (action == KeyEvent.ACTION_DOWN) {
             if ((KeyEvent.KEYCODE_MEDIA_PLAY == event.getKeyCode())
@@ -56,7 +55,13 @@ public class MediaButtonIntentReceiver extends BroadcastReceiver {
                 }
             }
 
+            AlertDialog.Builder dlgAlert = new AlertDialog.Builder(CounterProvider.getInstance().getActivity());
+            dlgAlert.setMessage("code = " + event.getKeyCode());
+            dlgAlert.setTitle("Info");
+            dlgAlert.setPositiveButton("OK", null);
+            dlgAlert.create().show();
         }
+
         abortBroadcast();
     }
 }

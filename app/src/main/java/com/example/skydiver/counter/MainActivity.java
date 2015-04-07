@@ -87,8 +87,6 @@ public class MainActivity extends Activity {
         ComponentName mediaButtonReceiver = new ComponentName(getPackageName(), MediaButtonIntentReceiver.class.getName());
 
         IntentFilter filter = new IntentFilter(Intent.ACTION_MEDIA_BUTTON);
-        filter.addAction("android.intent.action.HEADSET_STATE_CHANGED");
-        filter.addAction("android.bluetooth.intent.HEADSET_STATE");
         MediaButtonIntentReceiver r = new MediaButtonIntentReceiver();
         filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
         registerReceiver(r, filter);
@@ -96,7 +94,7 @@ public class MainActivity extends Activity {
         AudioManager mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mAudioManager.registerMediaButtonEventReceiver(mediaButtonReceiver);
 
-        Button button = (Button)findViewById(R.id.ClearData);
+        /*Button button = (Button)findViewById(R.id.ClearData);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 CounterProvider.getInstance().getCounterProperties().setPlusCount((short)0);
@@ -109,7 +107,7 @@ public class MainActivity extends Activity {
                 TextView tMinus = (TextView)findViewById(R.id.MinusCount);
                 tMinus.setText(String.valueOf(CounterProvider.getInstance().getCounterProperties().getMinusCount()));
             }
-        });
+        });*/
 
     }
 
